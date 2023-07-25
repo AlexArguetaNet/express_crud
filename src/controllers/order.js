@@ -15,7 +15,9 @@ exports.add_order = async (req, res) => {
     new_order.created_at = new Date();
 
     // Add to the database
-    await new_order.save();
+    await new_order.save()
+    .then(() => {console.log('New order added!')})
+    .catch((err) => {console.log(err)});
 
     res.redirect('/main/home');
 
@@ -29,7 +31,6 @@ exports.get_orders = async (req, res) => {
     await order_model.find({})
     .then((p) => {
 
-        console.log('New order added!');
         // Pass orders list as parameter when rendering view
         res.render('order/view', {orders: p});
     })
@@ -41,6 +42,6 @@ exports.get_orders = async (req, res) => {
 // GET: Gets the page to edit an order
 exports.edit = (req, res) => {
 
-    
+
 
 }
