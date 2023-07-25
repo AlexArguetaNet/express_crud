@@ -36,3 +36,11 @@ exports.get_orders = async (req, res) => {
     .catch((err) => {console.log(err)});
 
 }
+
+
+// GET: Gets the page to edit an order
+exports.edit = (req, res) => {
+
+    
+
+}
