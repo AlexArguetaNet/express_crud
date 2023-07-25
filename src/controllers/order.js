@@ -25,10 +25,13 @@ exports.add_order = async (req, res) => {
 // GET (Async): Gets the list of orders
 exports.get_orders = async (req, res) => {
 
+    // Get the list of order documents from MongoDB
     await order_model.find({})
     .then((p) => {
-        console.log(p);
-        res.render('order/view');
+
+        console.log('New order added!');
+        // Pass orders list as parameter when rendering view
+        res.render('order/view', {orders: p});
     })
     .catch((err) => {console.log(err)});
 
