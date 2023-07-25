@@ -6,10 +6,21 @@
 
         <% orders.forEach((e) => { %>
 
-            <p> <%- e.order_id %> <br> <%- e.required_date %> </p>
+            <ul>
 
+                <li>
+                    <p> Order Number: <%- e.order_id %> </p>
+                    <p> Promise Date: <%- e.required_date %> <a href="order/edit">Edit</a></p>
+                </li>
+
+            </ul>
+            
+            
+        
 
         <% }) %>
+
+        
 
     <% } %>
     
