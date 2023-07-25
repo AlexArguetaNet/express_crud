@@ -1,0 +1,27 @@
+<%- include('../partials/header.ejs') %>
+
+    <h1>Add New Order</h1>
+
+    <form action="add_order" method="POST">
+
+        <table>
+
+            <tr>
+                <label for="order_id">Order Number:</label>
+                <input type="number" name="order_id" required>
+            </tr>
+
+            <br>
+
+            <tr>
+                <label for="required_date">Required Date</label>
+                <input type="date" name="required_date" required>
+            </tr>
+
+        </table>
+
+        <input type="submit" value="Enter">
+
+    </form>
+
+<%- include('../partials/footer.ejs') %>
